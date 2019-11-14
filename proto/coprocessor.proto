@@ -29,6 +29,8 @@ message Request {
     // After a region applys to `applied_index`, we can get a
     // snapshot for the region even if the peer is follower.
     uint64 applied_index = 5;
+
+    bool scan_all_locks = 6;
 }
 
 message Response {
@@ -38,4 +40,5 @@ message Response {
     string other_error = 4;
     KeyRange range = 5;
     kvrpcpb.ExecDetails exec_details = 6;
+    repeated kvrpcpb.LockInfo all_locks = 7;
 }
