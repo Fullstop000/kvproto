@@ -46,7 +46,8 @@ message SearchLogRequest {
 }
 
 message SearchLogResponse {
-	repeated LogMessage messages = 1;
+	repeated LogMessage nomral = 1;
+	repeated LogMessage slow = 2;
 }
 
 message LogMessage {
